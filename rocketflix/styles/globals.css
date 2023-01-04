@@ -1,0 +1,9 @@
+:root {
+  background: rgb(232, 246, 243);
+  background: linear-gradient(
+    246deg,
+    rgba(232, 246, 243, 1) 0%,
+    rgba(115, 198, 182, 1) 100%
+  );
+  color: #0b5345;
+}
