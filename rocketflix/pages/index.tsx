@@ -1,15 +1,19 @@
 import axios from "axios";
-import Image from "next/image";
+// import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const [movie, setMovie] = useState([]);
+
+  const baseUrl = "https://api.themoviedb.org/3/movie/";
   const url =
     "https://api.themoviedb.org/3/movie/550?api_key=d96a96359ee669185a3797873a681efe";
 
-  function getUser() {
+  function getMovies() {
     axios
       .get(url)
-      .then((response) => console.log(response.data))
+      .then((response) => setMovie(response.data))
       .catch((error) => console.error(error));
   }
 
@@ -17,11 +21,15 @@ export default function Home() {
     return (
       <>
         <div>
-          test{/* <Image src={getUser().poster_path} alt="poster" /> */}
+          <h3>{}</h3>
         </div>
       </>
     );
   };
+
+  // useEffect(() => {
+  //   document.title = `Você clicou ${movie} vezes`;
+  // });
 
   return (
     <>
@@ -30,7 +38,7 @@ export default function Home() {
         <div>{<span>{changePosters()}</span>}</div>
         <button
           className={styles.buttonSearch}
-          onClick={() => console.log(getUser())}
+          onClick={() => console.log(getMovies())}
         >
           Encontre um filme
         </button>
