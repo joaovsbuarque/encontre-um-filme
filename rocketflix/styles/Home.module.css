@@ -18,3 +18,22 @@
 .subtitle {
   font-size: 1rem;
 }
+
+.titleFilme {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.containerInfos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 423px;
+  height: 274px;
+  margin-top: 2px;
+  flex-direction: column;
+}
+
+.overview {
+  margin: 0px;
+}
